@@ -9,9 +9,6 @@
                 <v-col style="max-width:140px;">
                     <String class="attributes-list" label="UserId" v-model="value.parameters.userId" :editMode="editMode"/>
                 </v-col>
-                <v-col style="max-width:140px;">
-                    <String class="attributes-list" label="UserName" v-model="value.parameters.userName" :editMode="editMode"/>
-                </v-col>
                 <v-col>
                     <v-btn class="gs-query-search-btn"
                         @click="search"
@@ -40,14 +37,13 @@
         }),
         created() {
             this.value.parameters.userId = '';
-            this.value.parameters.userName = '';
         },
         watch: {
         },
         methods: {
             search() {
                 let search = null;
-                if(this.value.parameters.userId == ''  && this.value.parameters.userName == '' ) {
+                if(this.value.parameters.userId == '' ) {
                     search = null;
                 }else{
                     search = this.value;

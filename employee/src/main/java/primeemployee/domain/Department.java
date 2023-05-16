@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
 import lombok.Data;
+import org.springframework.context.ApplicationContext;
 import primeemployee.EmployeeApplication;
 import primeemployee.domain.DepartmentAdd;
 
@@ -25,9 +26,12 @@ public class Department {
     }
 
     public static DepartmentRepository repository() {
-        DepartmentRepository departmentRepository = EmployeeApplication.applicationContext.getBean(
-            DepartmentRepository.class
-        );
+        DepartmentRepository departmentRepository = applicationContext()
+            .getBean(DepartmentRepository.class);
         return departmentRepository;
+    }
+
+    public static ApplicationContext applicationContext() {
+        return EmployeeApplication.applicationContext;
     }
 }

@@ -8,5 +8,5 @@ import primeemployee.domain.*;
 @RepositoryRestResource(collectionResourceRel = "employees", path = "employees")
 public interface EmployeeRepository
     extends PagingAndSortingRepository<Employee, Long> {
-    List<Employee> findByUserId(String userId, String userName);
+    List<Employee> findByUserId(String userId);
 }

@@ -9,5 +9,4 @@ import lombok.Data;
 public class EmployeeViewQuery {
 
     String userId;
-    String userName;
 }

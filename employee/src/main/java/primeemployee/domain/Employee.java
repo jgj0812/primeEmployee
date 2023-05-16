@@ -6,8 +6,6 @@ import javax.persistence.*;
 import lombok.Data;
 import primeemployee.EmployeeApplication;
 import primeemployee.domain.EmployeeAdd;
-import primeemployee.domain.EmployeeDelete;
-import primeemployee.domain.EmployeeUpdate;
 
 @Entity
 @Table(name = "Employee_table")
@@ -38,12 +36,6 @@ public class Employee {
     public void onPostPersist() {
         EmployeeAdd employeeAdd = new EmployeeAdd(this);
         employeeAdd.publishAfterCommit();
-
-        EmployeeUpdate employeeUpdate = new EmployeeUpdate(this);
-        employeeUpdate.publishAfterCommit();
-
-        EmployeeDelete employeeDelete = new EmployeeDelete(this);
-        employeeDelete.publishAfterCommit();
     }
 
     public static EmployeeRepository repository() {

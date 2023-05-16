@@ -10,7 +10,7 @@
                     <v-list-item-content>
                         <v-list-item-title style="margin-bottom:10px;">
                             
-                            
+                             Name 
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
